@@ -1,5 +1,5 @@
 #!/bin/bash
 git --version 1>/dev/null 2>&1 || (yum --version 1>/dev/null 2>&1 && yum -q install git -y)
 mkdir -p /usr/local/src
-git clone https://github.com/dchassin/gridlabd /usr/local/src/gridlabd -b {GRIDLABD_BRANCH:-master}
-/usr/local/src/gridlabd/install.sh
+git clone ${GRIDLABD_REPO:-https://github.com/dchassin/gridlabd} /usr/local/src/gridlabd -b ${GRIDLABD_BRANCH:-master}
+/usr/local/src/gridlabd/install.sh ${GRIDLABD_INSTALL_OPTIONS}
